@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Normalprofile, Bossprofile
-from bookmap.models import BookStore, Scrap
+from bookmap.models import BookStore
 # Create your views here.
 
 
@@ -10,8 +10,7 @@ def home(request):
     return render(request,'home.html')
 
 def mypage(request):
-    scraps = Scrap.objects.filter(user=request.user)
-    return render(request,'mypage.html', {'scraps':scraps})
+    return render(request,'mypage.html')
 
 def signup(request):
     return render(request,'signup.html')
