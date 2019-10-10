@@ -8,6 +8,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE","DNbookproject.settings")
 import django
 django.setup()
 from bookmap.models import BookStore
+from webdrivermanager import ChromeDriverManager
+ChromeDriverManager().download_and_install()
 
 def parse_addr():
     result=[]
@@ -38,7 +40,7 @@ def parse_addr():
                 tmp=j.find('a','weblink')
                 hp.append(tmp.get('href'))
             else:
-                hp.append('홈페이지없음')
+                hp.append('')
     result.append(name)
     result.append(addr)
     result.append(phone)
