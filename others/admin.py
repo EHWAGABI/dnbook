@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Culture, Comment
+from .models import Culture
 
 # Register your models here.
 admin.site.register(Culture)
-admin.site.register(Comment)
